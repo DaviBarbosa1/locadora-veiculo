@@ -1,0 +1,392 @@
+:root {
+  --asfalto: #1c2630;
+  --fundo: #e8ecef;
+  --papel: #ffffff;
+  --texto: #18222b;
+  --texto-suave: #55646f;
+  --linha: #cfd7dd;
+  --azul: #0b4f9e;
+  --azul-escuro: #083c78;
+  --verde: #176b45;
+  --verde-fundo: #dff2e7;
+  --ambar: #8f4b00;
+  --ambar-fundo: #fde9cc;
+  --erro: #9c1c1c;
+  --erro-fundo: #fbe0e0;
+  --raio: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: 'Barlow', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+h1,
+h2 {
+  font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+.pagina {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  background: var(--asfalto);
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.cabecalho-marca {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 14px 0;
+}
+
+.cabecalho-abas {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.aba {
+  background: none;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  color: #b9c4cd;
+  padding: 18px 14px 14px;
+  cursor: pointer;
+}
+
+.aba:hover {
+  color: #fff;
+}
+
+.aba-ativa {
+  color: #fff;
+  border-bottom-color: #f2b705;
+}
+
+.cabecalho-usuario {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.painel {
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 20px;
+}
+
+.painel-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.formulario {
+  display: grid;
+  gap: 14px;
+}
+
+.formulario label {
+  display: grid;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #aab6bf;
+  border-radius: var(--raio);
+  background: #fff;
+  color: var(--texto);
+}
+
+.botao {
+  background: var(--azul);
+  color: #fff;
+  border: 0;
+  border-radius: var(--raio);
+  padding: 11px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao:hover:not(:disabled) {
+  background: var(--azul-escuro);
+}
+
+.botao:disabled,
+.botao-secundario:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: var(--raio);
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.painel .botao-secundario {
+  color: var(--azul);
+}
+
+.botao-link {
+  background: none;
+  border: 0;
+  color: var(--azul);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mensagem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--raio);
+  margin-bottom: 16px;
+  border: 1px solid;
+}
+
+.mensagem-sucesso {
+  background: var(--verde-fundo);
+  color: var(--verde);
+  border-color: #9bd3b4;
+}
+
+.mensagem-erro {
+  background: var(--erro-fundo);
+  color: var(--erro);
+  border-color: #e3a3a3;
+}
+
+.mensagem-fechar {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.vazio {
+  color: var(--texto-suave);
+  margin: 12px 0;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--linha);
+}
+
+.item-locacao {
+  grid-template-columns: 1fr auto auto;
+}
+
+.item-locacao .botao-secundario {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.item-principal {
+  display: grid;
+  gap: 2px;
+}
+
+.item-detalhe {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.item-valor {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+}
+
+.selo {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.selo-livre {
+  background: var(--verde-fundo);
+  color: var(--verde);
+}
+
+.selo-alugado {
+  background: var(--ambar-fundo);
+  color: var(--ambar);
+}
+
+.filtro {
+  display: inline-flex;
+  border: 1px solid var(--azul);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.filtro-opcao {
+  background: #fff;
+  color: var(--azul);
+  border: 0;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.filtro-ativo {
+  background: var(--azul);
+  color: #fff;
+}
+
+.placa {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 118px;
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.placa-faixa {
+  width: 100%;
+  background: #0a3f99;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 1px 0;
+}
+
+.placa-numero {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  padding: 1px 0 2px;
+}
+
+.autenticacao {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 400px);
+  gap: 48px;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.autenticacao-apresentacao p {
+  font-size: 1.2rem;
+  max-width: 28ch;
+  color: var(--texto-suave);
+  margin: 16px 0 0;
+}
+
+@media (max-width: 800px) {
+  .grade,
+  .autenticacao {
+    grid-template-columns: 1fr;
+  }
+
+  .autenticacao {
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .item,
+  .item-locacao {
+    grid-template-columns: 1fr;
+  }
+
+  .item-valor {
+    justify-items: start;
+  }
+
+  .linha {
+    grid-template-columns: 1fr;
+  }
+}
